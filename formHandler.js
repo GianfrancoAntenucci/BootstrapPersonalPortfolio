@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize EmailJS with your user ID
     (function() {
@@ -5,23 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
 
     const form = document.getElementById('contactForm');
-    
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        
-        if (form.checkValidity()) {
-            try {
-                await emailjs.sendForm('service_cygl6nc', 'template_kirbfg9', form);
-                showAlert('Message sent successfully!', 'success');
-                form.reset();
-            } catch (error) {
-                showAlert('Error sending message. Please try again.', 'danger');
-                console.error('EmailJS Error:', error);
-            }
+
+
+    async function handleFormSubmit(form) {
+        try {
+            await emailjs.sendForm(
+                'service_cygl6nc', 
+                'template_kirbfg9', 
+                form
+            );
+            
+            showAlert('Message sent successfully!', 'success');
+            form.reset();
+            form.classList.remove('was-validated');
+            
+            form.querySelectorAll('.form-control').forEach(input => {
+                input.classList.remove('is-valid');
+            });
+        } catch (error) {
+            showAlert('Error sending message. Please try again.', 'danger');
+            console.error('EmailJS Error:', error);
         }
-        
-        form.classList.add('was-validated');
-    });
+    }
+    
+    
 });
 
 function showAlert(message, type) {

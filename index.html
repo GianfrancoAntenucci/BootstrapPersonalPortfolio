@@ -86,19 +86,19 @@
                 <form id="contactForm" class="row g-3 needs-validation" novalidate>
                     <div class="col-md-6">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" required>
+                        <input type="text" class="form-control" id="name" name="from_name" required>
                         <div class="invalid-feedback">Please enter your name</div>
                     </div>
                     
                     <div class="col-md-6">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" id="email" name="from_email" required>
                         <div class="invalid-feedback">Please enter a valid email</div>
                     </div>
 
                     <div class="col-12">
                         <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="4" required></textarea>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
                         <div class="invalid-feedback">Please enter your message</div>
                     </div>
 

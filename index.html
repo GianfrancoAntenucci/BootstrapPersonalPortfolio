@@ -1,166 +1,135 @@
 <!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Gianfranco - Full Stack Developer">
+        <title>Gianfranco | Full Stack Developer</title>
+        
+        <!-- Bootstrap 5.3.0-alpha1 CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <style>
+            /* Custom CSS Variables */
+            :root {
+                --primary-color: #2c3e50;
+                --secondary-color: #3498db;
+            }
+            
+            .profile-img {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+            }
+            
+            section {
+                scroll-margin-top: 80px;
+            }
+        </style>
+    </head>
 
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gianfranco's Web Page</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body>
-    <header class="bg-light py-3">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#">Gianfranco's Web Page</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand fw-bold" href="#">Gianfranco' web page</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/GianfrancoAntenucci" target="_blank" rel="noopener">GitHub</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </header>
 
-    <main class="container my-5" style="margin-top: 80px;">
-        <section id="about" class="text-center mb-5">
-            <h2 class="mb-4">About Me</h2>
-            <div class="row align-items-center">
-                <div class="col-md-4">
-                    <img src="me.jpeg" alt="Picture of myself" class="img-fluid rounded-circle" width="150">
-                </div>
-                <div class="col-md-8" style="text-align: justify;">
-                    <p>Hi, I'm Gianfranco, a dedicated Full Stack Developer with a passion for continuous learning and problem-solving.
-                        My skill set includes HTML, CSS, JavaScript, Python, Bootstrap, SQL, and DBMS. With a background in the hospitality and travel industry,
-                        I bring strong communication skills, adaptability, and a customer-focused approach to my work in tech.<br>
-                        I transitioned into software development through a Level 4 Full Stack Web Development Bootcamp at Step8Up Academy,
-                        where I gained hands-on experience in building modern, responsive, and user-friendly web applications.
-                        I'm excited to bring my skills and enthusiasm to new challenges in the tech industry.<br>
-                        PS: those next to me in the picture are my housemates Tarzan and Dino (they don't code, yet!).😄</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="mb-5">
-            <h2 class="text-center mb-4">Projects</h2>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <a href="https://gianfrancoantenucci.github.io/BootcampWebsiteCodeRefactor/" target="_blank">
-                            <img src="BootCampWebsite.png" class="card-img-top" alt="Screenshot of Bootcamp Website project">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text">A Bootcamp website page refactored using modern semantic HTML...</p>
+        <main class="container pt-5">
+            <!-- About Section -->
+            <section id="about" class="py-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-md-4 text-center">
+                        <img src="me.jpeg" alt="Gianfranco" class="profile-img rounded-circle shadow">
+                    </div>
+                    <div class="col-md-8">
+                        <h2 class="display-5 mb-4">Welcome to my page!</h2>
+                        <div class="lead">
+                            <p>Hi, I'm Gianfranco, a dedicated Full Stack Developer with a passion for continuous learning and problem-solving.
+                                With a background in the hospitality and travel industry,
+                                I bring strong communication skills, adaptability and a customer-focused approach to my work in tech.<br>
+                                I transitioned into software development through a Level 4 Full Stack Web Development Bootcamp at Step8Up Academy,
+                                where I gained hands-on experience in building modern, responsive, and user-friendly web applications.
+                                I'm excited to bring my skills and enthusiasm to new challenges in the tech industry.<br>
+                                PS: those next to me in the picture are my housemates Tarzan and Dino (they don't code, yet!).😄</p>
+                            <p>My skills:</p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item badge bg-primary">HTML5/CSS3</li>
+                                <li class="list-inline-item badge bg-primary">JavaScript</li>
+                                <li class="list-inline-item badge bg-primary">Python</li>
+                                <li class="list-inline-item badge bg-primary">Bootstrap</li>
+                                <li class="list-inline-item badge bg-primary">SQL</li>
+                                <li class="list-inline-item badge bg-primary">React</li>
+                                <li class="list-inline-item badge bg-primary">Django</li>
+                            </ul>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Form -->
+            <section id="contact" class="py-5">
+                <h2 class="text-center mb-4">Get in Touch</h2>
+                <form id="contactForm" class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                        <div class="invalid-feedback">Please enter your name</div>
                     </div>
                     
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <a href="https://gianfrancoantenucci.github.io/TheInteractiveToDoList/" target="_blank">
-                            <img src="ToDoList.png" class="card-img-top" alt="Screenshot of an Interactive ToDo list project">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text">An Interactive ToDo List...</p>
-                        </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                        <div class="invalid-feedback">Please enter a valid email</div>
                     </div>
-                    
-                </div>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <a href="https://gianfrancoantenucci.github.io/LittleLemonRestaurant/" target="_blank">
-                            <img src="LittleLemonLandingPage.png" class="card-img-top" alt="Screenshot of Multi Page Responsive Website project">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text">Multi page responsive website that uses modern layout techniques...</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <a href="https://gianfrancoantenucci.github.io/BootstrapWebsite/" target="_blank">
-                            <img src="BootstrapWebsite.png" class="card-img-top" alt="Screenshot of Bootstrap Website project">
-                        </a>
-                        <div class="card-body">
-                            <p class="card-text">Multi page responsive website showcasing advanced development techniques using Bootstrap...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section id="contact" class="text-center">
-            <h2 class="mb-4">Contact</h2>
-            
-        </section>
+                    <div class="col-12">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="4" required></textarea>
+                        <div class="invalid-feedback">Please enter your message</div>
+                    </div>
 
-        <form class="row g-3">
-            <div class="col-md-6">
-                <label for="name" class="form-label">Name:</label>
-                <input type="text" id="name" name="name" class="form-control" required>
-            </div>
-            <div class="col-md-6">
-                <label for="email" class="form-label">Email:</label>
-                <input type="email" id="email" name="email" class="form-control" required>
-            </div>
-            <div class="col-md-6">
-                <label for="tel" class="form-label">Tel:</label>
-                <input type="tel" id="tel" name="tel" class="form-control">
-            </div>
-            <div class="col-md-6">
-                <label for="message" class="form-label">Your message:</label>
-                <textarea id="message" name="message" class="form-control" required></textarea>
-            </div>
-            <div class="col-12 text-center">
-                <label class="form-label d-block mb-2">Favourite contact method:</label>
-                <div class="d-flex justify-content-center">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="email-contact" name="fav_contact" value="Email">
-                        <label class="form-check-label" for="email-contact">Email</label>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary px-4">Send Message</button>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="tel-contact" name="fav_contact" value="Tel.">
-                        <label class="form-check-label" for="tel-contact">Telephone</label>
-                    </div>
+                </form>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-light py-4 mt-5">
+            <div class="container text-center">
+                <p class="mb-0">
+                    © <span id="currentYear"></span> Gianfranco - Made with ❤ in Berkshire
+                    <span class="text-muted">|</span> 
+                </p>
+                <div class="mt-2">
+                    <a href="mailto:gianfranco@icloud.com" class="text-light text-decoration-none me-3">
+                        <i class="bi bi-envelope"></i> Email
+                    </a>
+                    <a href="https://github.com/GianfrancoAntenucci" class="text-light text-decoration-none" target="_blank" rel="noopener">
+                        <i class="bi bi-github"></i> GitHub
+                    </a>
                 </div>
             </div>
-            <div class="col-12 text-center">
-                <button type="button" class="btn btn-primary" onclick="sendMail()">Submit</button>
-                <button type="reset" class="btn btn-secondary">Clear</button>
-            </div>
-        </form>
-    </main>
-    
-    <footer class="bg-light py-3 text-center">
-        <h4>&copy; 2025 Gianfranco - Made with ☕ and ❤ in Berkshire</h4>
-    </footer>
-    <script>
-        function sendMail() {
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const tel = document.getElementById('tel').value;
-            const message = document.getElementById('message').value;
-            const favContact = document.querySelector('input[name="fav_contact"]:checked')?.value || 'Not specified';
+        </footer>
 
-            // Compose the email subject and body
-            const subject = "New Form Submission";
-            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0ATel: ${tel}%0D%0AMessage: ${message}%0D%0APreferred Contact Method: ${favContact}`;
-
-            // Open the default email client
-            window.location.href = `mailto:gfa2001@gmail.com?subject=${subject}&body=${body}`;
-        }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script src="formHandler.js"></script>
+    <script src="formHandler.js"></script>
+    </body>
 </html>

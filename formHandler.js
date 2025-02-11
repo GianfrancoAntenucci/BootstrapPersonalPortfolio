@@ -1,65 +1,75 @@
 // formHandler.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize EmailJS - Replace with your User ID
+    // Initialize EmailJS
     emailjs.init('Z-a1L7jFwWUT6J_cH');
 
     const form = document.getElementById('contactForm');
     const currentYear = document.getElementById('currentYear');
-    
-    // Set current year in footer
-    if(currentYear) {
-        currentYear.textContent = new Date().getFullYear();
-    }
+    let isSubmitting = false;
+    let alertInstance = null;
 
-    // Form submission handler
-    form.addEventListener('submit', async (event) => {
+    // Set current year
+    if(currentYear) currentYear.textContent = new Date().getFullYear();
+
+    // Remove any existing submit listeners to prevent duplicates
+    form.replaceWith(form.cloneNode(true));
+    const freshForm = document.getElementById('contactForm');
+
+    freshForm.addEventListener('submit', async (event) => {
         event.preventDefault();
         event.stopPropagation();
-
-        // Bootstrap validation
-        if (!form.checkValidity()) {
-            form.classList.add('was-validated');
-            return;
-        }
-
+        
+        if (isSubmitting) return;
+        
+        const submitBtn = freshForm.querySelector('button[type="submit"]');
+        
         try {
-            // Send email using EmailJS
-            await emailjs.sendForm(
+            isSubmitting = true;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+
+            if (!freshForm.checkValidity()) {
+                freshForm.classList.add('was-validated');
+                return;
+            }
+
+            const response = await emailjs.sendForm(
                 'service_cygl6nc',  // Replace with your Service ID
                 'template_kirbfg9', // Replace with your Template ID
-                form
+                freshForm
             );
 
+            if (alertInstance) alertInstance.close();
             showAlert('Message sent successfully! 🎉', 'success');
-            form.reset();
-            form.classList.remove('was-validated');
+            freshForm.reset();
+            freshForm.classList.remove('was-validated');
             
-            // Clear validation styles
-            form.querySelectorAll('.form-control').forEach(input => {
+            freshForm.querySelectorAll('.form-control').forEach(input => {
                 input.classList.remove('is-valid', 'is-invalid');
             });
 
         } catch (error) {
             console.error('EmailJS Error:', error);
-            showAlert(`Failed to send message. Error: ${error.text || 'Please try again later.'}`, 'danger');
+            if (alertInstance) alertInstance.close();
+            showAlert(`Failed to send: ${error.text || 'Please try again'}`, 'danger');
+        } finally {
+            isSubmitting = false;
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
         }
     });
 
     // Real-time validation
-    form.querySelectorAll('.form-control').forEach(input => {
+    freshForm.querySelectorAll('.form-control').forEach(input => {
         input.addEventListener('input', () => {
-            if (input.checkValidity()) {
-                input.classList.remove('is-invalid');
-                input.classList.add('is-valid');
-            } else {
-                input.classList.remove('is-valid');
+            input.classList.remove('is-valid', 'is-invalid');
+            input.checkValidity() ? 
+                input.classList.add('is-valid') : 
                 input.classList.add('is-invalid');
-            }
         });
     });
 });
 
-// Alert notification function
 function showAlert(message, type) {
     const alertDiv = document.createElement('div');
     alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
@@ -70,11 +80,16 @@ function showAlert(message, type) {
     `;
 
     const contactSection = document.getElementById('contact');
-    contactSection.insertBefore(alertDiv, contactSection.firstChild);
-
+    const existingAlert = contactSection.querySelector('.alert');
+    if (existingAlert) existingAlert.remove();
+    
+    contactSection.prepend(alertDiv);
+    
+    // Initialize Bootstrap alert properly
+    alertInstance = new bootstrap.Alert(alertDiv);
+    
     // Auto-dismiss after 5 seconds
     setTimeout(() => {
-        const bsAlert = new bootstrap.Alert(alertDiv);
-        bsAlert.close();
+        alertInstance.close();
     }, 5000);
 }

@@ -5,32 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Gianfranco - Full Stack Developer">
         <title>Gianfranco | Full Stack Developer</title>
-        <!-- Bootstrap 5.3.0-alpha1 CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            /* Custom CSS Variables */
             :root {
                 --primary-color: #2c3e50;
                 --secondary-color: #3498db;
             }
-            
             .profile-img {
                 width: 200px;
                 height: 200px;
                 object-fit: cover;
             }
-            
             section {
                 scroll-margin-top: 80px;
             }
         </style>
     </head>
-
     <body>
-        <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="#">Gianfranco' web page</a>
@@ -41,15 +34,14 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://github.com/GianfrancoAntenucci" target="_blank" rel="noopener">GitHub</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-
         <main class="container pt-5">
-            <!-- About Section -->
             <section id="about" class="py-5">
                 <div class="row align-items-center g-5">
                     <div class="col-md-4 text-center">
@@ -57,77 +49,88 @@
                     </div>
                     <div class="col-md-8">
                         <h2 class="display-5 mb-4">Welcome to my page!</h2>
-                        <div class="lead">
-                            <p>Hi, I'm Gianfranco, a dedicated Full Stack Developer with a passion for continuous learning and problem-solving.
-                                With a background in the hospitality and travel industry,
-                                I bring strong communication skills, adaptability and a customer-focused approach to my work in tech.<br>
-                                I transitioned into software development through a Level 4 Full Stack Web Development Bootcamp at Step8Up Academy,
-                                where I gained hands-on experience in building modern, responsive, and user-friendly web applications.
-                                I'm excited to bring my skills and enthusiasm to new challenges in the tech industry.<br>
-                                PS: those next to me in the picture are my housemates Tarzan and Dino (they don't code, yet!).😄</p>
-                            <p>My skills:</p>
-                            <ul class="list-inline">
-                                <li class="list-inline-item badge bg-primary">HTML5/CSS3</li>
-                                <li class="list-inline-item badge bg-primary">JavaScript</li>
-                                <li class="list-inline-item badge bg-primary">Python</li>
-                                <li class="list-inline-item badge bg-primary">Bootstrap</li>
-                                <li class="list-inline-item badge bg-primary">SQL</li>
-                                <li class="list-inline-item badge bg-primary">React</li>
-                                <li class="list-inline-item badge bg-primary">Django</li>
-                            </ul>
+                        <p>Hi, I'm Gianfranco, a dedicated Full Stack Developer with a passion for continuous learning and problem-solving. 
+                          With a background in the hospitality and travel industry, I bring strong communication skills, adaptability, 
+                          and a customer-focused approach to my work in tech.<br>I transitioned into software development through a Level 4 Full Stack Web Development Bootcamp 
+                          at Step8Up Academy, where I gained hands-on experience in building modern, responsive, and user-friendly web applications. 
+                          I'm excited to bring my skills and enthusiasm to new challenges in the tech industry.
+                          <br>PS: those next to me in the picture are my housemates Tarzan and Dino (they don't code, yet!).😄</p>
+                          <p>My skills:</p>
+                          <ul class="list-inline">
+                              <li class="list-inline-item badge bg-primary">HTML5/CSS3</li>
+                              <li class="list-inline-item badge bg-primary">JavaScript</li>
+                              <li class="list-inline-item badge bg-primary">Python</li>
+                              <li class="list-inline-item badge bg-primary">Bootstrap</li>
+                              <li class="list-inline-item badge bg-primary">SQL</li>
+                              <li class="list-inline-item badge bg-primary">React</li>
+                              <li class="list-inline-item badge bg-primary">Django</li>
+                          </ul>
+                        </div>
+                </div>
+            </section>
+            <section id="projects" class="py-5">
+                <h2 class="text-center mb-4">Projects</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <img src="bug-tracker-app.png" class="card-img-top" alt="Project 1">
+                            <div class="card-body">
+                                <h5 class="card-title">The Bug Tracker App</h5>
+                                <p class="card-text">A web application designed to help teams manage 
+                                    and track software bugs efficiently. It allows users to create, assign, prioritize 
+                                    and update the status of bugs in real-time. Key features include user authentication, 
+                                    role-based access control, filtering and sorting bugs by severity and status, 
+                                    an intuitive dashboard for tracking progress. 
+                                    The app ensures a seamless and collaborative workflow for development teams.</p>
+                                <a href="https://the-bug-tracker.netlify.app/" class="btn btn-primary">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card shadow-sm">
+                            <img src="restaurants-booking-system.png" class="card-img-top" alt="Project 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Restaurants Booking System</h5>
+                                <p class="card-text">A web application that enables customers to seamlessly 
+                                    book tables at their favorite restaurants. The system allows restaurant 
+                                    owners to manage reservations, set table availability, and send 
+                                    automated booking confirmations. Key features include real-time 
+                                    availability checks and user authentication.
+                                    This app optimizes the dining experience for both customers and 
+                                    restaurant managers.</p>
+                                <a href="https://restaurants-booking-system.netlify.app/" class="btn btn-primary">View Project</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-
-            <!-- Contact Form -->
-            <section id="contact" class="py-5">
+                    <section id="contact" class="py-5">
                 <h2 class="text-center mb-4">Get in Touch</h2>
                 <form id="contactForm" class="row g-3 needs-validation" novalidate>
                     <div class="col-md-6">
                         <label for="from_name" class="form-label">Name</label>
                         <input type="text" class="form-control" id="from_name" name="from_name" required>
-                        <div class="invalid-feedback">Please enter your name</div>
                     </div>
-                    
                     <div class="col-md-6">
                         <label for="from_email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="from_email" name="from_email" required>
-                        <div class="invalid-feedback">Please enter a valid email</div>
                     </div>
-
                     <div class="col-12">
                         <label for="message" class="form-label">Message</label>
                         <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                        <div class="invalid-feedback">Please enter your message</div>
                     </div>
-
                     <div class="col-12 text-center">
                         <button type="submit" class="btn btn-primary px-4">Send Message</button>
                     </div>
                 </form>
             </section>
         </main>
-
-        <!-- Footer -->
         <footer class="bg-dark text-light py-4 mt-5">
             <div class="container text-center">
-                <p class="mb-0">
-                    © <span id="currentYear"></span> Gianfranco - Made with ❤ in Berkshire
-                    <span class="text-muted">|</span> 
-                </p>
-                <div class="mt-2">
-                    <a href="mailto:gianfranco@icloud.com" class="text-light text-decoration-none me-3">
-                        <i class="bi bi-envelope"></i> Email
-                    </a>
-                    <a href="https://github.com/GianfrancoAntenucci" class="text-light text-decoration-none" target="_blank" rel="noopener">
-                        <i class="bi bi-github"></i> GitHub
-                    </a>
-                </div>
+                <p class="mb-0">© <span id="currentYear"></span> Gianfranco - Made with ❤ in Berkshire</p>
             </div>
         </footer>
-
-        <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="formHandler.js"></script>
     </body>
